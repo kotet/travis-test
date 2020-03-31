@@ -1,0 +1,17 @@
+script:
+    - echo "${TEST}, ${TRAVIS_EVENT_TYPE}"
+
+language: d
+
+d:
+    - dmd
+    - ldc
+
+jobs:
+    include:
+      - name: "A"
+        env: TEST=123
+      - name: "B"
+        env: TEST=456
+      - name: "C"
+        env: TEST=789
